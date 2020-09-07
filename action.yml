@@ -8,6 +8,9 @@ inputs:
     api-key:
         description: 'API_KEY of backlog'
         required: true
+    not-close-issue:
+        description: 'Dont change status'
+        required: false
 runs:
     using: 'node12'
     main: 'dist/index.js'

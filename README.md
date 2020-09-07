@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Add comment to Backlog issue
-      uses: actions/pr-to-backlog-action@v1.0
+      uses: mongolyy/pr-to-backlog-action@v0.9
       with:
         backlog-host: workspace.backlog.com
         api-key: ${{ secrets.BACKLOG_API_KEY }}
