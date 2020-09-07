@@ -8,7 +8,8 @@ async function run() {
   try {
     const host = core.getInput("backlog-host", { required: true });
     const apiKey = core.getInput("api-key", { required: true });
-    const notCloseIssue = core.getInput("not-close-issue", {required: false}) === 'true';
+    const notCloseIssue =
+      core.getInput("not-close-issue", { required: false }) === "true";
 
     if (github.context.eventName != "pull_request") {
       core.error("Event should be a pull_request");
@@ -32,7 +33,7 @@ async function run() {
         break;
       case "closed":
         if (pr.pull_request.merged) {
-          const msg = `Pull request [#${pr.number}](${pr.pull_request.html_url}) merged and closed by ${pr.sender.login}: ${title}`
+          const msg = `Pull request [#${pr.number}](${pr.pull_request.html_url}) merged and closed by ${pr.sender.login}: ${title}`;
           if (notCloseIssue) {
             payload = {
               comment: msg,
